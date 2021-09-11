@@ -1,0 +1,111 @@
+@forward 'components/navbar';
+@forward 'components/projects';
+@use 'abstracts/colors' as *;
+@use 'abstracts/font_size' as *;
+
+*, *::after, *::before {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+html {
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+}
+
+.hero {
+    background: $cultured;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 90vh;
+    display: flex;
+    align-items: center;
+    
+    .text {
+        margin-left: 10%;
+        width: 50%;
+    }
+    
+    img {
+        width: 35vw;
+        max-width: 524px;
+        margin-left: 5%;
+
+        @media screen and (max-width: 1700px) {
+            padding-right: 5%;
+            padding-top: 5%;
+        }
+    }
+}
+
+h1 {
+    font-size: clamp(2rem, 5vw, 10rem);
+    text-align: left;
+    font-weight: 500;
+    font-family: "Trap", sans-serif;
+    letter-spacing: -2.5px;
+    color: $jet;
+    opacity: 1;
+    line-height: 1;
+
+    @media screen and (max-width: 800px) {
+        letter-spacing: 0;
+    }
+}
+
+.section {
+    background-color: $jet;
+    display: grid;
+    grid-template-rows: min-content min-content;
+    h2 {
+        justify-self: center;
+        margin-top: 5vw;
+        font-size: $h2font;
+        font-family: "Trap", sans-serif;
+        font-weight: 500;
+        letter-spacing: -9.6px;
+        color: $cultured;
+        opacity: 0.5;
+
+        @media screen and (max-width: 800px) {
+            letter-spacing: 0;
+        }
+    }
+    .bigarticle {
+        justify-self: center;
+        font-size: $bigarticles;
+        font-family: "Williwaw", serif;
+        width: 70%;
+        letter-spacing: -1.8px;
+        color: $cultured;
+
+        @media screen and (max-width: 800px) {
+            letter-spacing: 0;
+        }
+    }
+}
+
+footer {
+    background-color: $jet;
+    padding: 2%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    p {
+        display: block;
+        font-size: $littlearticles;
+        font-family: "Williwaw", serif;
+        color: $cultured;
+
+        a {
+            color: $cultured;
+            text-decoration: underline;
+        }
+    }
+}

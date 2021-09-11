@@ -1,0 +1,73 @@
+@use '../abstracts/colors' as *;
+@use '../abstracts/font_size' as *;
+
+#showcase {
+    scroll-snap-align: start;
+}
+
+.projects {
+    width: 100%;
+    z-index: 0;
+    .swiper-button-prev::after, .swiper-button-next::after {
+        color: $cultured;
+    }
+}
+
+.projects__slide {
+    overflow: hidden;
+    width: 350px;
+    height: 467px;
+    border-right: 1px solid $jet;
+    position: relative;
+    background-color: $cultured;
+
+    .title {
+        text-decoration: none;
+        margin-left: 10px;
+        margin-bottom: 10px;
+        font-size: 3rem;
+        font-family: "Williwaw", serif;
+        color: $jet;
+    }
+
+    .project__image {
+        visibility: hidden;
+        pointer-events: none;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    @media screen and (min-width: 800px) {
+        &:hover, &focus, &:active {
+            .title {
+                color: $cultured;
+            }
+            .project__image {
+                animation: fadeInRight 0.5s;
+                visibility: visible;
+            }
+        }
+    }
+    @media screen and (max-width: 800px) {
+        .title {
+            color: $cultured;
+        }
+        .project__image {
+            visibility: visible;
+        }
+    }
+}
+
+.project:nth-last-child(1) {
+    border-right: 0px;
+}
+
+.project__link {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}

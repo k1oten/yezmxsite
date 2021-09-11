@@ -1,0 +1,9 @@
+.parcel-cache/
+/root/dist
+/root/assets
+node_modules/
+package-lock.json
+package.json
+.parcelrc
+.proxyrc.js
+.env.local
